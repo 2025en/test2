@@ -1,0 +1,133 @@
+/* 기본 스타일 초기화 */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* 페이지 스크롤바가 생기지 않도록 함 */
+    font-family: 'Malgun Gothic', sans-serif;
+}
+
+/* 배경 이미지 컨테이너 */
+#background-container {
+    width: 100%;
+    height: 100%;
+    /* 제공해주신 새 배경 이미지 주소입니다 */
+    background-image: url('https://github.com/2025en/test1/blob/main/webimg.jpg?raw=true');
+    background-size: cover; /* 배경 이미지가 화면에 꽉 차도록 설정 */
+    background-position: center; /* 배경 이미지를 중앙에 정렬 */
+    background-repeat: no-repeat; /* 배경 이미지가 반복되지 않도록 설정 */
+    position: relative; /* 자식 요소(오브젝트)의 position 기준이 됨 */
+}
+
+/* 클릭 가능한 오브젝트의 공통 스타일 */
+.object {
+    position: absolute; /* 절대 위치를 사용하여 위치 지정 */
+    background-color: #ffeb3b; /* 포스트잇 느낌의 노란색 배경 */
+    padding: 8px 12px;
+    border: 1px solid #a49627;
+    border-radius: 3px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3); /* 입체감을 위한 그림자 */
+    cursor: pointer; /* 마우스 커서를 클릭 가능한 모양으로 변경 */
+    transition: transform 0.2s; /* 부드러운 전환 효과 */
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* 오브젝트에 마우스를 올리면 약간 커지는 효과 */
+.object:hover {
+    transform: scale(1.1);
+}
+
+/* ★★★★★ 여기를 수정했습니다! ★★★★★ */
+/* 새 이미지에 맞게 모든 오브젝트의 위치를 다시 조정했습니다. */
+
+/* 오브젝트 1 (분홍색 포스트잇 위) */
+#object1 {
+    top: 28%;
+    left: 10%;
+}
+
+/* 오브젝트 2 (노란색 포스트잇 위) */
+#object2 {
+    top: 55%;
+    left: 42%;
+}
+
+/* 오브젝트 3 (주황색 포스트잇 위) */
+#object3 {
+    top: 60%;
+    left: 72%;
+}
+/* ★★★★★ 수정 완료 ★★★★★ */
+
+
+/* 모달 컨테이너 (화면 전체를 덮는 반투명 배경) */
+#modal-container {
+    position: fixed; /* 화면 스크롤과 상관없이 고정된 위치 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* 반투명 검은색 배경 */
+    display: flex; /* Flexbox를 사용하여 내부 요소를 쉽게 중앙 정렬 */
+    justify-content: center;
+    align-items: center;
+}
+
+/* 모달 창의 실제 콘텐츠 부분 */
+#modal-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px; /* 모달의 최대 너비 지정 */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* 모달 내부 요소들의 스타일 */
+#quiz-question {
+    font-size: 1.2em; /* 폰트 크기 */
+    margin-bottom: 20px; /* 아래쪽 여백 */
+    line-height: 1.5; /* 줄 간격 */
+}
+
+#quiz-answer-input {
+    width: calc(100% - 22px); /* 너비 100%에서 padding, border 값을 뺌 */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#quiz-result {
+    margin-top: 15px;
+    font-weight: bold;
+    min-height: 24px; /* 결과 메시지가 없을 때도 공간을 차지하도록 설정 */
+}
+
+/* 버튼 공통 스타일 */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 5px;
+}
+
+#submit-answer-btn {
+    background-color: #4CAF50; /* 초록색 */
+    color: white;
+}
+
+#close-modal-btn {
+    background-color: #f44336; /* 빨간색 */
+    color: white;
+}
+
+/* ID와 클래스를 함께 사용하여 우선순위를 높여 .hidden 클래스가 확실하게 적용되도록 함 */
+#modal-container.hidden {
+    display: none;
+}
